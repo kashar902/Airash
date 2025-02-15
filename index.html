@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Airaas!</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe6f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #e91e63;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e91e63;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            color: #e91e63;
+            font-size: 2em;
+            animation: heartbeat 1s infinite;
+        }
+
+        .flowers {
+            font-size: 1.8em;
+            margin: 15px 0;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="secretInput" placeholder="Type something special...">
+    <div class="container" style="display: none;">
+        <h1>Happy (Late) Valentine's Day, Airaas!</h1>
+        <div class="flowers">🌹🌸🌺🌷🌹</div>
+        <p>Even though it's a little late, I wanted to tell you how special you are. 
+            You bring so much joy and happiness into my life. 
+            I hope this message brings a smile to your face.</p>
+        <p class="heart">❤️</p>
+        <div class="flowers">🌸🌺🌷🌹🌸</div>
+    </div>
+
+    <script>
+        document.getElementById('secretInput').addEventListener('input', function(e) {
+            if(e.target.value === 'ILoveYouAshar') {
+                document.getElementById('secretInput').style.display = 'none';
+                Swal.fire({
+                    title: 'I Love You Too! ❤️',
+                    text: 'You mean the world to me!',
+                    icon: 'success',
+                    confirmButtonText: 'Thank you!',
+                    background: '#fff',
+                    confirmButtonColor: '#e91e63',
+                    showConfetti: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.querySelector('.container').style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
