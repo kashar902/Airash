@@ -83,7 +83,7 @@
 
     <script>
         document.getElementById('secretInput').addEventListener('input', function(e) {
-            if(e.target.value === 'ILoveYouAshar') {
+            if(e.target.value.toLowerCase() === 'i love you ashar'.toLowerCase()) {
                 document.getElementById('secretInput').style.display = 'none';
                 Swal.fire({
                     title: 'I Love You Too! ❤️',
